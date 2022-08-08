@@ -30,7 +30,8 @@ class Aluno {
       id: map['id'] ?? '',
       name: map['name'] ?? '',
       password: map['password'] ?? '',
-      cursos: List<Curso>.from(map['cursos']?.map((curso) => Curso.fromMap(curso))),
+      //cursos: List<Curso>.from(map['cursos']?.map((curso) => Curso.fromMap(curso))),
+      cursos: map['cursos'].map<Curso>((cursoMap)=>Curso.fromMap(cursoMap)).toList,
     );
   }
 
